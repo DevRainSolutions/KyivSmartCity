@@ -1,0 +1,132 @@
+﻿@using DevRainSolutions.KyivSmartCity.New.Models
+@model DevRainSolutions.KyivSmartCity.New.Models.Volunteer
+@{
+    ViewBag.Title = "Долучитися до проекту";
+}
+
+@section scripts{
+@Scripts.Render("~/bundles/jqueryval")
+<script src='https://www.google.com/recaptcha/api.js'></script>
+    
+}
+
+
+
+<style>
+    input, select {
+        margin: 10px 0;
+}
+    
+</style>
+
+@using (Html.BeginForm())
+{
+    @*@Html.Raw(Html.SpamProtectionTimeStamp())*@
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>@ViewBag.Title</h2>
+
+            <p>
+                У нас завжди знайдеться, що запропонувати активним і готовим рішуче змінювати цей світ
+                на краще. Нам потрібні будь-які твої таланти і можливості.
+
+            </p>
+            <div>
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+            <div>
+                @Html.TextBoxPlaceHolderFor(model => model.Email, new{@class="form-control"})
+            </div>
+
+            <div>
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+            <div>
+                @Html.TextBoxPlaceHolderFor(model => model.FirstName, new { @class = "form-control" })
+            </div>
+
+
+
+            <div>
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+            <div>
+                @Html.TextBoxPlaceHolderFor(model => model.LastName, new { @class = "form-control" })
+
+            </div>
+           
+            <div>
+                @Html.ValidationMessageFor(model => model.Phone)
+            </div>
+            <div>
+                @Html.TextBoxPlaceHolderFor(model => model.Phone, new
+                {
+                    type = "tel",
+                    @class="form-control"
+                })
+
+            </div>
+
+            <div>
+                @Html.ValidationMessageFor(model => model.City)
+            </div>
+            <div>
+              
+
+                @Html.TextBoxPlaceHolderFor(m => m.City, new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.ValidationMessageFor(model => model.GroupId)
+            </div>
+            <div>
+                @Html.DropDownListFor(model => model.GroupId, ((IEnumerable<Group>)ViewBag.PossibleGroups).Select(option => new SelectListItem
+            {
+                Text = (option == null ? "None" : option.Title),
+                Value = option.Id.ToString(),
+                Selected = (Model != null) && (option.Id == Model.GroupId)
+            }), "Виберіть групу...", new { @class = "form-control" })
+            </div>
+
+
+            <div>
+                @Html.ValidationMessageFor(model => model.Notes)
+            </div>
+            <div>
+                @Html.TextAreaPlaceHolderFor(model => model.Notes, new { @class = "form-control" })
+
+            </div>
+
+
+            <div style="margin-top: 20px;">
+                @Html.ValidationMessage("captcha")
+                <div class="g-recaptcha" data-sitekey="6LfVeQkTAAAAAGOokhrTa3BXmlg957l-vq1Ssnvc"></div>
+            </div>
+
+            <div style="margin-top: 20px;">
+                
+                <input type="checkbox" style="margin: 0; vertical-align: middle;" id="check"/>
+                <label style="display: inline" for="check">
+                    Даю згоду на обробку персональних даних
+                    (відповідно до Закону України «Про захист персональних даних» від 1 червня 2010 року, №2297-УІ)
+                </label>
+            </div>
+
+           
+
+            <div style="margin-top: 20px; ">
+                <button type="submit" class="send btn fs18 f_light red-link-bg delay"
+                        disabled="disabled" id="submit-button">
+                    Надіслати
+                </button>
+            </div>
+
+          
+
+
+        </div>
+        
+    </div>
+
+}
+
+

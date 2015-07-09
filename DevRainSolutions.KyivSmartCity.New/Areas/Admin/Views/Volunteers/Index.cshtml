@@ -1,0 +1,77 @@
+@model IEnumerable<DevRainSolutions.KyivSmartCity.New.Models.Volunteer>
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Volunteers";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+            <table class="table table-hover">
+                <tr>
+                    <th></th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        FirstName
+                    </th>
+                    <th>
+                        LastName
+                    </th>
+                    <th>
+                        RegistrationDate
+                    </th>
+                    <th>
+                        City
+                    </th>
+                    <th>
+                        Phone
+                    </th>
+                    <th>
+                        Notes
+                    </th>
+                    <th>
+                        Group
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+                        <td>
+                            @item.Email
+                        </td>
+                        <td>
+                            @item.FirstName
+                        </td>
+                        <td>
+                            @item.LastName
+                        </td>
+                        <td>
+                            @String.Format("{0:g}", item.RegistrationDate)
+                        </td>
+                        <td>
+                            @item.City
+                        </td>
+                        <td>
+                            @item.Phone
+                        </td>
+                        <td>
+                            @item.Notes
+                        </td>
+                        <td>
+                            @(item.Group == null ? "None" : item.Group.Title)
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))

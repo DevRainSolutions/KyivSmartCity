@@ -1,0 +1,38 @@
+@model DevRainSolutions.KyivSmartCity.New.Models.TeamMember
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TeamMember</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">@Model.Name</div>
+
+    <div class="display-label">ImageUrl</div>
+    <div class="display-field">@Model.ImageUrl</div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">@Model.Description</div>
+
+    <div class="display-label">Email</div>
+    <div class="display-field">@Model.Email</div>
+
+    <div class="display-label">Twitter</div>
+    <div class="display-field">@Model.Twitter</div>
+
+    <div class="display-label">Facebook</div>
+    <div class="display-field">@Model.Facebook</div>
+
+    <div class="display-label">LinkedIn</div>
+    <div class="display-field">@Model.LinkedIn</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

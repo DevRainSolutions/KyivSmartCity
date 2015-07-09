@@ -1,0 +1,104 @@
+﻿@using DevRainSolutions.KyivSmartCity.New.Models
+@{
+    string title = ViewBag.Title + " - Kyiv Smart City";
+    var image = ViewBag.OgImage ?? Url.ContentAbsUrl("~/Images/main-top-bg.jpg");
+    var description = ViewBag.Description ?? "Що об’єднує такі міста як Відень, Торонто, Париж, Нью-Йорк, Лондон, Токіо, Берлін, Копенгаген, Гонконг та Барселона? Усі – належать до ТОП-10 «розумних» міст планети. Вони активно застосовують інформаційно-комунікаційні технології аби більш ефективно використовувати ресурси, зберігати енергію, підвищувати якість життя мешканців, зменшувати негативний вплив на навколишнє середовище та підтримувати інновації. Чи потрапить до переліку Smart cities Київ? Все залежить від тебе!";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Kyiv Smart City</title>
+    <meta http-equiv="Content-Language" content="uk-UA">
+    <meta name="Description" content="@description" />
+    <meta name="Keywords" content="смарт сіті, розумне місто, Київ, електронний уряд, smartcity" scheme="" />
+    <meta property="og:title" content="@title" />
+    <meta property="og:url" content="@Request.Url" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="@description" />
+    <meta property="og:image" content="@image" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+
+    <script type="text/javascript" src="/Scripts/social-likes.min.js"></script>
+    <link rel="stylesheet" href="/Content/social-likes_birman.css" />
+
+    <script>
+        $(document).ready(function () {
+            $("#check").click(function () {
+                if ($(this).is(':checked')) {
+                    $("#submit-button").removeAttr('disabled');
+                } else {
+                    $("#submit-button").attr('disabled', 'disabled');
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Kyiv Smart City", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Команда", "Index", "Team")</li>
+                    <li>@Html.ActionLink("Групи", "Index", "Groups")</li>
+                    <li>@Html.ActionLink("Новини", "Index", "News")</li>
+                    <li>@Html.ActionLink("Долучитись до проекту", "Join", "Home")</li>
+                    <li>@Html.ActionLink("Forum 2015", "Forum2015", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+
+    @if (ViewBag.IsMain != null)
+    {
+        <div class="jumbotron" style="background: url('/Images/main-top-bg.jpg') 100%">
+            <div class="container body-content">
+                <h1 style="color: white">Kyiv Smart City</h1>
+                <p class="lead">Що об’єднує такі міста як Відень, Торонто, Париж, Нью-Йорк, Лондон, Токіо, Берлін, Копенгаген, Гонконг та Барселона? Усі – належать до ТОП-10 «розумних» міст планети. Вони активно застосовують інформаційно-комунікаційні технології аби більш ефективно використовувати ресурси, зберігати енергію, підвищувати якість життя мешканців, зменшувати негативний вплив на навколишнє середовище та підтримувати інновації. Чи потрапить до переліку Smart cities Київ? Все залежить від тебе!</p>
+                <p>
+                    <a href="@Url.Action("Join", "Home")" class="btn btn-primary btn-lg">Долучитись до проекту &raquo;</a>
+                </p>
+            </div>
+        </div>
+    }
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>
+                        &copy; @DateTime.Now.Year - Kyiv Smart City
+                    </p>
+                </div>
+                <div class="col-md-6" style="text-align: right;">
+                    <p>Розробка: <a href="http://devrain.com">DevRain Solutions</a></p>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    @Html.Partial("_Feedback")
+    @Html.Partial("_GoogleAnalytics")
+</body>
+</html>

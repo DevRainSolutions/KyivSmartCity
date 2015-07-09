@@ -1,0 +1,28 @@
+﻿@using System.Collections
+@using System.Globalization
+@using MarkdownDeep
+@model DevRainSolutions.KyivSmartCity.New.Models.NewsItem
+@{
+    ViewBag.Title = Model.Name;
+    ViewBag.OgImage = Model.Image;
+    var md = new Markdown { SafeMode = false, ExtraMode = true };
+}
+<div class="row">
+    <div class="col-md-8">
+
+        <h2>@Model.Name</h2>
+        <p class="fs12 text-grey">@Model.DatePublished.ToString("f", new CultureInfo("uk-UA"))</p>
+        <p>@Html.Partial("_Social")</p>
+
+      
+
+        <div class="text-block fs16">
+            @Html.Raw(md.Transform(Model.Body))
+        </div>
+
+        @Html.Partial("_Disqus")
+    </div>
+    <div class="col-md-4">
+        @Html.Partial("_Aside")
+    </div>
+</div>

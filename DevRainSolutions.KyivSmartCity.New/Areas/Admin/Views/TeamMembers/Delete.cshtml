@@ -1,0 +1,41 @@
+@model DevRainSolutions.KyivSmartCity.New.Models.TeamMember
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>TeamMember</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">@Model.Name</div>
+
+    <div class="display-label">ImageUrl</div>
+    <div class="display-field">@Model.ImageUrl</div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">@Model.Description</div>
+
+    <div class="display-label">Email</div>
+    <div class="display-field">@Model.Email</div>
+
+    <div class="display-label">Twitter</div>
+    <div class="display-field">@Model.Twitter</div>
+
+    <div class="display-label">Facebook</div>
+    <div class="display-field">@Model.Facebook</div>
+
+    <div class="display-label">LinkedIn</div>
+    <div class="display-field">@Model.LinkedIn</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

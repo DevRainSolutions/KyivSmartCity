@@ -1,0 +1,38 @@
+﻿@model IEnumerable<DevRainSolutions.KyivSmartCity.New.Models.Group>
+@{
+    ViewBag.Title = "Головна";
+    ViewBag.IsMain = true;
+}
+
+
+<div class="row">
+
+    @foreach (var i in Model)
+    {
+        <div class="col-md-6">
+            <h2>@i.Title</h2>
+            <p>
+                @i.Description
+            </p>
+            <p>
+                <a class="btn btn-default" href="@Url.Action("Details", "Groups", new {id = i.Id})">Дізнатись більше &raquo;</a>
+            </p>
+        </div>
+    }
+
+</div>
+
+<div style="padding: 50px 0">
+
+    <div id="fb-root"></div>
+    <script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v2.4&appId=242663235886929";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class="fb-like" data-href="https://www.facebook.com/smartcitykyiv" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+</div>

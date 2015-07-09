@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DevRainSolutions.KyivSmartCity.New.Models.TeamMember>
+@{
+    ViewBag.Title = "Команда";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row" style="margin-top: 40px;">
+
+    @foreach (var i in Model)
+    {
+        <div class="col-md-4" style="margin-bottom: 20px; height: 400px;">
+            <p class="round big">
+                <img src="@i.ImageUrl" />
+            </p>
+            <h3>
+                @i.Name
+            </h3>
+
+            <p>
+                @i.Description
+            </p>
+            <p>
+                @*
+    @if (!string.IsNullOrWhiteSpace(i.Twitter))
+    {
+        <span><a href="@i.Twitter">twitter</a></span>
+    }
+
+    @if (!string.IsNullOrWhiteSpace(i.Facebook))
+    {
+        <span><a href="@i.Facebook">facebook</a></span>
+    }*@
+
+                @if (!string.IsNullOrWhiteSpace(i.Email))
+                {
+                    <span><a href="@i.Email">@i.Email</a></span>
+                }
+            </p>
+        </div>
+        
+    }
+
+</div>
+

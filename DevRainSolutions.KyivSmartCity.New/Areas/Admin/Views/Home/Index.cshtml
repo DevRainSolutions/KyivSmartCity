@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Admin portal";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    <a href="@Url.Action("Index", "TeamMembers", new {area = "Admin"})" class="btn btn-default">Team members</a>
+    <a href="@Url.Action("Index", "Documents", new{area="Admin"})" class="btn btn-default">Documents</a>
+
+    <a href="@Url.Action("Index", "Experts", new {area = "Admin"})" class="btn btn-default">Experts</a>
+
+    <a href="@Url.Action("Index", "Groups", new {area = "Admin"})" class="btn btn-default">Groups</a>
+
+    <a href="@Url.Action("Index", "NewsItems", new {area = "Admin"})" class="btn btn-default">News</a>
+
+    <a href="@Url.Action("Index", "Volunteers", new {area = "Admin"})" class="btn btn-default">Volunteers</a>
+
+
+    <a href="@Url.Action("Export", "Volunteers", new {area = "Admin"})" class="btn btn-default">Download Volunteers</a>
+
+</p>

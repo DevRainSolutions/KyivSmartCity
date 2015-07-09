@@ -1,0 +1,26 @@
+@model DevRainSolutions.KyivSmartCity.New.Models.Document
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Document</legend>
+
+    <div class="display-label">Group</div>
+    <div class="display-field">@(Model.Group == null ? "None" : Model.Group.Title)</div>
+
+    <div class="display-label">Title</div>
+    <div class="display-field">@Model.Title</div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">@Model.Description</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

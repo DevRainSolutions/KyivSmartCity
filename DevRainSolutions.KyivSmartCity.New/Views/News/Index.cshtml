@@ -1,0 +1,49 @@
+﻿@using System.Globalization
+@using DevRainSolutions.KyivSmartCity.New.Models
+@using PagedList
+@using PagedList.Mvc
+@model IEnumerable<DevRainSolutions.KyivSmartCity.New.Models.NewsItem>
+@{
+    ViewBag.Title = "Новини";
+
+}
+
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>@ViewBag.Title</h2>
+
+        @foreach (var i in Model)
+        {
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="@i.Image" style="width:100%" />
+                </div>
+                <div class="col-md-8">
+                    <div class="fs12 text-grey">@i.DatePublished.ToRelative()</div>
+                    <a href="@Url.Action("Details", "News", new{id=i.Id})">
+                        <h3 style="margin-top: 10px;">@i.Name</h3>
+                    </a>
+
+
+                    <p>
+                        @i.Description.Summary(500)
+                    </p>
+
+                    <p>
+                        <a class="btn btn-default" href="@Url.Action("Details", "News", new{id=i.Id})">Читати повністю &raquo;</a>
+                    </p>
+                </div>
+            </div>
+
+
+        }
+
+        <div>
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+        </div>
+    </div>
+    <div class="col-md-4">
+        @Html.Partial("_Aside")
+    </div>
+</div>

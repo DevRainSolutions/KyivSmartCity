@@ -1,0 +1,21 @@
+﻿@model string
+
+
+<div id="notes-button-bar"></div>
+@Html.TextArea("", Model, new { @id = "wmd" })
+
+
+<link rel="stylesheet" type="text/css" href="/Content/wmd.css">
+<script type="text/javascript" src="/Scripts/wmd.js"></script>
+<script type="text/javascript" src="/Scripts/showdown.js"></script>
+
+
+<script type="text/javascript">
+    setup_wmd({
+        input: "wmd",
+        button_bar: "notes-button-bar"
+        //preview: "notes-preview",
+        //output: "copy_html",
+        //output_format: "html"
+    });
+</script>

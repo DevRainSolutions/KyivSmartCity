@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Accept" xml:space="preserve">
+    <value>Please enter a value with a valid mimetype.</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Індекс, адреса</value>
+  </data>
+  <data name="BloodGroupId" xml:space="preserve">
+    <value>Група крові</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Місто</value>
+  </data>
+  <data name="CityId" xml:space="preserve">
+    <value>Місто</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Підтвердити новий пароль</value>
+  </data>
+  <data name="ContactPerson" xml:space="preserve">
+    <value>Контактна людина</value>
+  </data>
+  <data name="Creditcard" xml:space="preserve">
+    <value>Please enter a valid credit card number.</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Введіть вірну дату.</value>
+  </data>
+  <data name="DateISO" xml:space="preserve">
+    <value>Please enter a valid date (ISO).</value>
+  </data>
+  <data name="DateOccured" xml:space="preserve">
+    <value>Дата здачі</value>
+  </data>
+  <data name="DateOfBirth" xml:space="preserve">
+    <value>Дата народження</value>
+  </data>
+  <data name="DateOfDead" xml:space="preserve">
+    <value>Дата смерті</value>
+  </data>
+  <data name="DateRegistered" xml:space="preserve">
+    <value>Дата реєстрації</value>
+  </data>
+  <data name="DateTime" xml:space="preserve">
+    <value>Введіть вірну дату та час.</value>
+  </data>
+  <data name="Digits" xml:space="preserve">
+    <value>Поле може містити лише числа.</value>
+  </data>
+  <data name="Disease" xml:space="preserve">
+    <value>Назва хвороби</value>
+  </data>
+  <data name="DonationType" xml:space="preserve">
+    <value>Тип здачі</value>
+  </data>
+  <data name="DonorCenter" xml:space="preserve">
+    <value>Центр здачі крові</value>
+  </data>
+  <data name="EditorTemplateNotFoundFor" xml:space="preserve">
+    <value>Шаблон для "{0}" не знайдено.</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Електронна адреса</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Введіть коректну електронну адресу.</value>
+  </data>
+  <data name="EqualTo" xml:space="preserve">
+    <value>Введіть це саме значення ще раз.</value>
+  </data>
+  <data name="FieldMustBeDate" xml:space="preserve">
+    <value>Введіть коректну дату для "{0}".</value>
+    <comment>Localization for legacy MVC ClientDataTypeModelValidatorProvider</comment>
+  </data>
+  <data name="FieldMustBeNumeric" xml:space="preserve">
+    <value>Введіть коректне число для"{0}".</value>
+    <comment>Localization for legacy MVC ClientDataTypeModelValidatorProvider</comment>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Ім'я</value>
+  </data>
+  <data name="IncorrectVerificationWord" xml:space="preserve">
+    <value>Ви невірно ввели перевірочне слово. Будь ласка, спробуйте ще раз.</value>
+  </data>
+  <data name="InvalidLoginAttempt" xml:space="preserve">
+    <value>Помилка авторизації. Перевірте правильність логіну та паролю.</value>
+    <comment>Invalid login attempt.</comment>
+  </data>
+  <data name="InvalidPropertyValue" xml:space="preserve">
+    <value>Invalid property value: {0}</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Прізвище</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Логін</value>
+  </data>
+  <data name="Max" xml:space="preserve">
+    <value>Введіть значення, що не більше або дорівнює {0}.</value>
+  </data>
+  <data name="MaxLength" xml:space="preserve">
+    <value>Значення поля \"{0}\" має бути не більше, ніж {0} символів.</value>
+  </data>
+  <data name="MiddleName" xml:space="preserve">
+    <value>По батькові</value>
+  </data>
+  <data name="Min" xml:space="preserve">
+    <value>Please enter a value greater than or equal to {0}.</value>
+  </data>
+  <data name="MinLength" xml:space="preserve">
+    <value>Будь ласка, введіть для "{0}", як мінімум, {2} символів.</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Новий пароль</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Коментарі</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>Введіть коректне число.</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Поточний пароль</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="PasswordAndConfirmationDoNotMatch" xml:space="preserve">
+    <value>Введений та перевірочний паролі не співпадають.</value>
+    <comment>The password and confirmation password do not match.</comment>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="PhotoImage" xml:space="preserve">
+    <value>Посилання на фото</value>
+  </data>
+  <data name="PropertyValueInvalid" xml:space="preserve">
+    <value>The value "{0}" is invalid for the property "{1}"</value>
+    <comment>Localization for legacy MVC DefaultModelBinder</comment>
+  </data>
+  <data name="PropertyValueRequired" xml:space="preserve">
+    <value>Поле "{0}" обов'язкове для заповнення.</value>
+    <comment>Localization for legacy MVC DefaultModelBinder</comment>
+  </data>
+  <data name="Range" xml:space="preserve">
+    <value>Please enter a value between {1} and {2}.</value>
+  </data>
+  <data name="RangeClient" xml:space="preserve">
+    <value>Please enter a value between {0} and {1}.</value>
+  </data>
+  <data name="RangeLength" xml:space="preserve">
+    <value>Please enter a value between {0} and {1} characters long.</value>
+  </data>
+  <data name="Recipient" xml:space="preserve">
+    <value>Реципієнт</value>
+  </data>
+  <data name="RegionId" xml:space="preserve">
+    <value>Область прописки</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Запам'ятати?</value>
+  </data>
+  <data name="Remote" xml:space="preserve">
+    <value>Перевірте правильність введенного значення.</value>
+  </data>
+  <data name="SelectBloodType" xml:space="preserve">
+    <value>Виберіть, як мінімум, один тип кроводачі.</value>
+  </data>
+  <data name="Sex" xml:space="preserve">
+    <value>Стать</value>
+  </data>
+  <data name="SignedInt" xml:space="preserve">
+    <value>Please enter an integer value, sign allowed.</value>
+  </data>
+  <data name="SubscriptionTypeId" xml:space="preserve">
+    <value>Тип сповіщень</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Введіть коректне значення часу.</value>
+  </data>
+  <data name="UnsignedInt" xml:space="preserve">
+    <value>Введіть ціле число, що більше 0.</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Введіть посилання у коректному форматі.</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Електронна адреса</value>
+  </data>
+  <data name="ValueNull" xml:space="preserve">
+    <value>&lt;null&gt;</value>
+  </data>
+  <data name="VolunteerExists" xml:space="preserve">
+    <value>Волонтер з такою адресою вже існує.</value>
+  </data>
+  <data name="VolunteerWorkType" xml:space="preserve">
+    <value>Тип роботи</value>
+  </data>
+  <data name="YouMustHaveConfirmedEmailToLogOn" xml:space="preserve">
+    <value>Ця електронная адреса не підтверджена.</value>
+    <comment>You must have a confirmed email to log on.</comment>
+  </data>
+</root>

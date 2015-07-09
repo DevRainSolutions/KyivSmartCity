@@ -1,0 +1,35 @@
+@model DevRainSolutions.KyivSmartCity.New.Models.Group
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Group</legend>
+
+    <div class="display-label">Title</div>
+    <div class="display-field">@Model.Title</div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">@Model.Description</div>
+
+    <div class="display-label">Body</div>
+    <div class="display-field">@Model.Body</div>
+
+    <div class="display-label">Experts</div>
+    <div class="display-field">@(Model.Experts == null ? "None" : Model.Experts.Count.ToString())</div>
+
+    <div class="display-label">Documents</div>
+    <div class="display-field">@(Model.Documents == null ? "None" : Model.Documents.Count.ToString())</div>
+
+    <div class="display-label">TeamMember</div>
+    <div class="display-field">@(Model.TeamMember == null ? "None" : Model.TeamMember.Name)</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+
