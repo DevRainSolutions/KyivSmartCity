@@ -1,5 +1,6 @@
 @model IEnumerable<DevRainSolutions.KyivSmartCity.New.Models.TeamMember>
-
+@using PagedList
+@using PagedList.Mvc
 @{
     ViewBag.Title = "Index";
 }
@@ -9,7 +10,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
+<table class="table table-hover">
     <tr>
         <th></th>
         <th>
@@ -22,17 +23,9 @@
             Description
         </th>
         <th>
-            Email
+            Contact details
         </th>
-        <th>
-            Twitter
-        </th>
-        <th>
-            Facebook
-        </th>
-        <th>
-            LinkedIn
-        </th>
+      
     </tr>
 
 @foreach (var item in Model) {
@@ -53,14 +46,11 @@
         </td>
         <td>
 			@item.Email
-        </td>
-        <td>
+            <br />
 			@item.Twitter
-        </td>
-        <td>
+       <br/>
 			@item.Facebook
-        </td>
-        <td>
+            <br />
 			@item.LinkedIn
         </td>
     </tr>
@@ -69,3 +59,4 @@
 </table>
 
 
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))

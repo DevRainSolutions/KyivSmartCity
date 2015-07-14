@@ -63,3 +63,7 @@ textarea {
     p.lead {
         color: white;
     }
+
+    input[type=submit] {
+        margin-top: 20px;
+    }

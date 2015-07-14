@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls.Expressions;
 using DevRainSolutions.KyivSmartCity.New.Models;
 using DevRainSolutions.KyivSmartCity.New.Areas.Admin.Models;
+using PagedList;
 
 namespace DevRainSolutions.KyivSmartCity.New.Areas.Admin.Controllers
 {   
@@ -27,9 +29,12 @@ namespace DevRainSolutions.KyivSmartCity.New.Areas.Admin.Controllers
         //
         // GET: /Documents/
 
-        public ViewResult Index()
+        public ViewResult Index(int? page)
         {
-            return View(documentRepository.AllIncluding(document => document.Group));
+            var pageNumber = page ?? 1;
+            return View(documentRepository.AllIncluding(document => document.Group)
+                .OrderBy(i=>i.Title)
+                .ToPagedList(pageNumber, 10));
         }
 
         //

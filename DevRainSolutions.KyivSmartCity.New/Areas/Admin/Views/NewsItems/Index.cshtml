@@ -1,5 +1,6 @@
 @model IEnumerable<DevRainSolutions.KyivSmartCity.New.Models.NewsItem>
-
+@using PagedList
+@using PagedList.Mvc
 @{
     ViewBag.Title = "Index";
 }
@@ -9,57 +10,48 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
+<table class="table table-hover">
     <tr>
+        <th></th>
         <th></th>
         <th>
             Name
         </th>
-        <th>
-            Description
-        </th>
+       
         <th>
             DatePublished
         </th>
         <th>
             IsPublished
         </th>
-        <th>
-            Image
-        </th>
-        <th>
-            Body
-        </th>
+        
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
+            @Html.ActionLink("Details", "Details", new {id = item.Id}) |
+            @Html.ActionLink("Delete", "Delete", new {id = item.Id})
+        </td>
+        <td>
+            <img src="@item.Image"  style="width: 100px;"/>
         </td>
         <td>
 			@item.Name
         </td>
-        <td>
-			@item.Description
-        </td>
+       
         <td>
 			@String.Format("{0:g}", item.DatePublished)
         </td>
         <td>
 			@item.IsPublished
         </td>
-        <td>
-			@item.Image
-        </td>
-        <td>
-			@item.Body
-        </td>
+        
     </tr>
 }
 
 </table>
 
 
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace DevRainSolutions.KyivSmartCity.New.Areas.Admin.Controllers
 {
-    [Authorize(Users = "alex.krakovetskiy@gmail.com,asyzenko@yahoo.com,annakibitko@gmail.com")]
+    [Authorize]
     public abstract class BaseAdminController : Controller
     {
     }

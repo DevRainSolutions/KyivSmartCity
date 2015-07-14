@@ -2,30 +2,30 @@
 
 @* This partial view defines form fields that will appear when creating and editing entities *@
 
-<div class="editor-label">
+<div>
     @Html.LabelFor(model => model.Title)
 </div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.Title)
+<div>
+    @Html.TextBoxFor(model => model.Title, new{@class="form-control"})
     @Html.ValidationMessageFor(model => model.Title)
 </div>
 
-<div class="editor-label">
-   Reference
+<div>
+    @Html.LabelFor(model => model.Description)
 </div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.Description)
+<div>
+    @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
     @Html.ValidationMessageFor(model => model.Description)
 </div>
 
-<div class="editor-label">
-    Group
+<div>
+    @Html.LabelFor(model => model.GroupId)
 </div>
-<div class="editor-field">
+<div>
     @Html.DropDownListFor(model => model.GroupId, ((IEnumerable<DevRainSolutions.KyivSmartCity.New.Models.Group>)ViewBag.PossibleGroups).Select(option => new SelectListItem {
         Text = (option == null ? "None" : option.Title), 
         Value = option.Id.ToString(),
         Selected = (Model != null) && (option.Id == Model.GroupId)
-    }), "Choose...")
+}), "Choose...", new { @class = "form-control" })
     @Html.ValidationMessageFor(model => model.GroupId)
 </div>

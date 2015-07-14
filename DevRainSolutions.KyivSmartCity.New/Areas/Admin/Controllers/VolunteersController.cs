@@ -33,7 +33,6 @@ namespace DevRainSolutions.KyivSmartCity.New.Areas.Admin.Controllers
             var pageNumber = page ?? 1;
             return View(volunteerRepository.AllIncluding(volunteer => volunteer.Group)
                 .OrderByDescending(i=>i.RegistrationDate)
-                .ToList()
                 .ToPagedList(pageNumber, 10));
         }
 

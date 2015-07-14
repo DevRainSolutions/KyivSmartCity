@@ -1,5 +1,6 @@
 @model IEnumerable<DevRainSolutions.KyivSmartCity.New.Models.Group>
-
+@using PagedList
+@using PagedList.Mvc
 @{
     ViewBag.Title = "Index";
 }
@@ -9,7 +10,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
+<table class="table table-hover">
     <tr>
         <th></th>
         <th>
@@ -18,9 +19,7 @@
         <th>
             Description
         </th>
-        <th>
-            Body
-        </th>
+       
         <th>
             Experts
         </th>
@@ -45,9 +44,7 @@
         <td>
 			@item.Description
         </td>
-        <td>
-			@item.Body
-        </td>
+       
         <td>
 			@(item.Experts == null ? "None" : item.Experts.Count.ToString())
         </td>
@@ -62,4 +59,4 @@
 
 </table>
 
-
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))

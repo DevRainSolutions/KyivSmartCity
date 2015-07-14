@@ -394,6 +394,7 @@
     <Content Include="Views\UserMailer\_Layout.cshtml" />
     <Content Include="Views\UserMailer\Welcome.cshtml" />
     <Content Include="Views\Home\Forum2015.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NotFoundMvc\NotFoundMvc.csproj">

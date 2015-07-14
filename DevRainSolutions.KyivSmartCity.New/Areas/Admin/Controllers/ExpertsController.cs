@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using DevRainSolutions.KyivSmartCity.New.Models;
 using DevRainSolutions.KyivSmartCity.New.Areas.Admin.Models;
+using PagedList;
 
 namespace DevRainSolutions.KyivSmartCity.New.Areas.Admin.Controllers
 {
@@ -27,9 +28,12 @@ namespace DevRainSolutions.KyivSmartCity.New.Areas.Admin.Controllers
         //
         // GET: /Experts/
 
-        public ViewResult Index()
+        public ViewResult Index(int? page)
         {
-            return View(expertRepository.AllIncluding(expert => expert.Group));
+            var pageNumber = page ?? 1;
+            return View(expertRepository.AllIncluding(expert => expert.Group)
+                .OrderBy(i=>i.Title)
+                .ToPagedList(pageNumber, 10));
         }
 
         //
