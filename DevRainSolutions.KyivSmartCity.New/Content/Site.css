@@ -1,5 +1,4 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
 }
 
@@ -67,3 +66,10 @@ textarea {
     input[type=submit] {
         margin-top: 20px;
     }
+
+  .navbar {
+      padding: 10px 0;
+      margin-bottom: 0;
+      background: url(/Images/bg.png) top right no-repeat;
+  }
+ 

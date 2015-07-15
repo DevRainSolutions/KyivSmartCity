@@ -39,7 +39,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -47,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Kyiv Smart City", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="/" class="navbar-brand"><img src="/Images/logo.png" style="height: 20px" /></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -56,17 +56,18 @@
                     <li>@Html.ActionLink("Новини", "Index", "News")</li>
                     <li>@Html.ActionLink("Долучитись до проекту", "Join", "Home")</li>
                     <li>@Html.ActionLink("Forum 2015", "Forum2015", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+                </ul>@*
+                    @Html.Partial("_LoginPartial")*@
             </div>
         </div>
+
     </div>
 
 
     @if (ViewBag.IsMain != null)
     {
         <div class="jumbotron" style="background: url('/Images/main-top-bg.jpg') 100%">
-            <div class="container body-content">
+            <div class="container">
                 <h1 style="color: white">Kyiv Smart City</h1>
                 <p class="lead">Що об’єднує такі міста як Відень, Торонто, Париж, Нью-Йорк, Лондон, Токіо, Берлін, Копенгаген, Гонконг та Барселона? Усі – належать до ТОП-10 «розумних» міст планети. Вони активно застосовують інформаційно-комунікаційні технології аби більш ефективно використовувати ресурси, зберігати енергію, підвищувати якість життя мешканців, зменшувати негативний вплив на навколишнє середовище та підтримувати інновації. Чи потрапить до переліку Smart cities Київ? Все залежить від тебе!</p>
                 <p>
@@ -74,12 +75,20 @@
                 </p>
             </div>
         </div>
+
+        <div class="container body-content">
+            @RenderBody()
+            @Html.Partial("_Footer")
+        </div>
+    }
+    else
+    {
+        <div class="container body-content" style="border-top: 1px solid #eee;">
+            @RenderBody()
+            @Html.Partial("_Footer")
+        </div>
     }
 
-    <div class="container body-content">
-        @RenderBody()
-        @Html.Partial("_Footer")
-    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

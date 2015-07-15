@@ -3323,7 +3323,7 @@ jQuery.support = (function( support ) {
 
 	// Setup
 	div.setAttribute( "className", "t" );
-	div.innerHTML = "  <link/><table class="table table-hover"></table><a href='/a'>a</a><input type='checkbox'/>";
+	div.innerHTML = "  <link/><table></table><a href='/a'>a</a><input type='checkbox'/>";
 
 	// Finish early in limited (non-browser) environments
 	all = div.getElementsByTagName("*") || [];
@@ -3486,7 +3486,7 @@ jQuery.support = (function( support ) {
 		// determining if an element has been hidden directly using
 		// display:none (it is still safe to use offsets if a parent element is
 		// hidden; don safety goggles and see bug #4512 for more information).
-		div.innerHTML = "<table class="table table-hover"><tr><td></td><td>t</td></tr></table>";
+		div.innerHTML = "<table><tr><td></td><td>t</td></tr></table>";
 		tds = div.getElementsByTagName("td");
 		tds[ 0 ].style.cssText = "padding:0;margin:0;border:0;display:none";
 		isSupported = ( tds[ 0 ].offsetHeight === 0 );
@@ -6018,10 +6018,10 @@ var nodeNames = "abbr|article|aside|audio|bdi|canvas|data|datalist|details|figca
 		legend: [ 1, "<fieldset>", "</fieldset>" ],
 		area: [ 1, "<map>", "</map>" ],
 		param: [ 1, "<object>", "</object>" ],
-		thead: [ 1, "<table class="table table-hover">", "</table>" ],
-		tr: [ 2, "<table class="table table-hover"><tbody>", "</tbody></table>" ],
-		col: [ 2, "<table class="table table-hover"><tbody></tbody><colgroup>", "</colgroup></table>" ],
-		td: [ 3, "<table class="table table-hover"><tbody><tr>", "</tr></tbody></table>" ],
+		thead: [ 1, "<table>", "</table>" ],
+		tr: [ 2, "<table><tbody>", "</tbody></table>" ],
+		col: [ 2, "<table><tbody></tbody><colgroup>", "</colgroup></table>" ],
+		td: [ 3, "<table><tbody><tr>", "</tr></tbody></table>" ],
 
 		// IE6-8 can't serialize link, script, style, or any html5 (NoScope) tags,
 		// unless wrapped in a div with non-breaking characters in front of it.
@@ -6582,12 +6582,12 @@ jQuery.extend({
 					// Remove IE's autoinserted <tbody> from table fragments
 					if ( !jQuery.support.tbody ) {
 
-						// String was a <table class="table table-hover">, *may* have spurious <tbody>
+						// String was a <table>, *may* have spurious <tbody>
 						elem = tag === "table" && !rtbody.test( elem ) ?
 							tmp.firstChild :
 
 							// String was a bare <thead> or <tfoot>
-							wrap[1] === "<table class="table table-hover">" && !rtbody.test( elem ) ?
+							wrap[1] === "<table>" && !rtbody.test( elem ) ?
 								tmp :
 								0;
 
