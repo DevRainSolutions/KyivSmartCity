@@ -20,7 +20,7 @@
                     <img src="@i.Image" style="width:100%" />
                 </div>
                 <div class="col-md-8">
-                    <div class="fs12 text-grey">@i.DatePublished.ToRelative()</div>
+                    <div class="fs12 text-grey">@i.DatePublished.ToString("f", new CultureInfo("uk-UA"))</div>
                     <a href="@Url.Action("Details", "News", new{id=i.Id})">
                         <h3 style="margin-top: 10px;">@i.Name</h3>
                     </a>

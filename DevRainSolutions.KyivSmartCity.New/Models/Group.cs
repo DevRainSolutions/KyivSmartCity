@@ -349,6 +349,8 @@ namespace DevRainSolutions.KyivSmartCity.New.Models
 
         [StringLength(200)]
         public string LinkedIn { get; set; }
+
+        public int Index { get; set; }
     }
 
     public class NewsItem

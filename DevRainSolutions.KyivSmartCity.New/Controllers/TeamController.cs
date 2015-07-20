@@ -11,7 +11,7 @@ namespace DevRainSolutions.KyivSmartCity.New.Controllers
         // GET: Team
         public ActionResult Index()
         {
-            return View(db.TeamMembers.ToList());
+            return View(db.TeamMembers.OrderBy(i=>i.Index));
         }
     }
 }

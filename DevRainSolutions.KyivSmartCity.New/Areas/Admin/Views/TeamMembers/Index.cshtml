@@ -25,7 +25,9 @@
         <th>
             Contact details
         </th>
-      
+        <th>
+           Index
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -45,13 +47,16 @@
 			@item.Description
         </td>
         <td>
-			@item.Email
-            <br />
-			@item.Twitter
-       <br/>
-			@item.Facebook
-            <br />
-			@item.LinkedIn
+            @item.Email
+            <br/>
+            @item.Twitter
+            <br/>
+            @item.Facebook
+            <br/>
+            @item.LinkedIn
+        </td>
+        <td>
+            @item.Index
         </td>
     </tr>
 }

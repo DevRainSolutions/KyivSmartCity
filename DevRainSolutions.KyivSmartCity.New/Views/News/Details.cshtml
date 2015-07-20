@@ -14,8 +14,6 @@
         <p class="fs12 text-grey">@Model.DatePublished.ToString("f", new CultureInfo("uk-UA"))</p>
         <p>@Html.Partial("_Social")</p>
 
-      
-
         <div class="text-block fs16">
             @Html.Raw(md.Transform(Model.Body))
         </div>

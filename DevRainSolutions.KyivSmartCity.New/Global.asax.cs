@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using DevRainSolutions.KyivSmartCity.New.Areas.Admin.Models;
+using DevRainSolutions.KyivSmartCity.New.Migrations;
 
 namespace DevRainSolutions.KyivSmartCity.New
 {
@@ -10,8 +11,8 @@ namespace DevRainSolutions.KyivSmartCity.New
     {
         protected void Application_Start()
         {
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<KyivSmartCityNewContext, Configuration>());
-            Database.SetInitializer(new CreateDatabaseIfNotExists<KyivSmartCityNewContext>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<KyivSmartCityNewContext, Configuration>());
+            //Database.SetInitializer(new CreateDatabaseIfNotExists<KyivSmartCityNewContext>());
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

@@ -14,7 +14,7 @@ namespace DevRainSolutions.KyivSmartCity.New.Controllers
         {
             var pageNumber = page ?? 1;
 
-            return View(db.NewsItems.ToList()
+            return View(db.NewsItems.OrderByDescending(i=>i.DatePublished)
                 .ToPagedList(pageNumber, PerPage));
         }
 
