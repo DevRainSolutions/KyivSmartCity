@@ -266,6 +266,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\bg.png" />
+    <Content Include="Images\hack-bg.jpg" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\main-top-bg.jpg" />
     <Content Include="Images\Team\alex.png" />

@@ -66,13 +66,29 @@
 
     @if (ViewBag.IsMain != null)
     {
-        <div class="jumbotron" style="background: url('/Images/main-top-bg.jpg') 100%">
+        <div class="jumbotron" style="background: url('/Images/hack-bg.jpg') 100%; background-size: cover">
             <div class="container">
-                <h1 style="color: white">Kyiv Smart City</h1>
-                <p class="lead">Що об’єднує такі міста як Відень, Торонто, Париж, Нью-Йорк, Лондон, Токіо, Берлін, Копенгаген, Гонконг та Барселона? Усі – належать до ТОП-10 «розумних» міст планети. Вони активно застосовують інформаційно-комунікаційні технології аби більш ефективно використовувати ресурси, зберігати енергію, підвищувати якість життя мешканців, зменшувати негативний вплив на навколишнє середовище та підтримувати інновації. Чи потрапить до переліку Smart cities Київ? Все залежить від тебе!</p>
-                <p>
-                    <a href="@Url.Action("Join", "Home")" class="btn btn-primary btn-lg">Долучитись до проекту &raquo;</a>
-                </p>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1 style="color: white">Хакатон "Kyiv Smart City"</h1>
+                        <p class="lead">
+                            Мета – зібрати під одним дахом талановитих людей, яким не байдуже майбутнє Києва. Хакатон присвячений розробці сервісів та мобільних застосунків на базі відкритих даних та API міста, що зможуть покращити життя киян та сприятимуть розвитку Києва як «розумного міста».
+                        </p>
+                        <p>
+                            <a href="http://goo.gl/forms/MjQSGcTHiX" target="_blank" rel="nofollow" class="btn btn-danger btn-lg">Зареєструватись</a>
+                            <a href="http://appclub.im/events/details/11049" style="font-size: 70%; color: lightgrey">Деталі</a>
+                        </p>
+                    </div>
+                </div>
+
+               
+
+                @*
+    <h1 style="color: white">Kyiv Smart City</h1>
+    <p class="lead">Що об’єднує такі міста як Відень, Торонто, Париж, Нью-Йорк, Лондон, Токіо, Берлін, Копенгаген, Гонконг та Барселона? Усі – належать до ТОП-10 «розумних» міст планети. Вони активно застосовують інформаційно-комунікаційні технології аби більш ефективно використовувати ресурси, зберігати енергію, підвищувати якість життя мешканців, зменшувати негативний вплив на навколишнє середовище та підтримувати інновації. Чи потрапить до переліку Smart cities Київ? Все залежить від тебе!</p>
+    <p>
+        <a href="@Url.Action("Join", "Home")" class="btn btn-primary btn-lg">Долучитись до проекту &raquo;</a>
+    </p>*@
             </div>
         </div>
 
@@ -88,7 +104,6 @@
             @Html.Partial("_Footer")
         </div>
     }
-
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
