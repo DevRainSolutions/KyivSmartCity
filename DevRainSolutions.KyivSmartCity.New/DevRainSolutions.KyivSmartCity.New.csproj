@@ -227,8 +227,11 @@
     <Compile Include="Areas\Admin\Models\NewsItemRepository.cs" />
     <Compile Include="Areas\Admin\Models\TeamMemberRepository.cs" />
     <Compile Include="Areas\Admin\Models\VolunteerRepository.cs" />
+    <Compile Include="Areas\Hackathon\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Hackathon\HachathonAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\EnController.cs" />
     <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -267,7 +270,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\bg.png" />
     <Content Include="Images\hack-bg.jpg" />
+    <Content Include="Images\kmcp.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\lun.png" />
     <Content Include="Images\main-top-bg.jpg" />
     <Content Include="Images\Team\alex.png" />
     <Content Include="Images\Team\andriy.jpg" />
@@ -317,6 +322,9 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Hackathon\Views\web.config" />
+    <Content Include="Areas\Hackathon\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Hackathon\Views\_ViewStart.cshtml" />
     <None Include="Properties\PublishProfiles\kyivsmartcity-dev.pubxml" />
     <None Include="Properties\PublishProfiles\kyivsmartcity.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -398,6 +406,7 @@
     <Content Include="Views\UserMailer\Welcome.cshtml" />
     <Content Include="Views\Home\Forum2015.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\En\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NotFoundMvc\NotFoundMvc.csproj">
@@ -424,6 +433,11 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ValidationResources.designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Hackathon\Models\" />
+    <Folder Include="Areas\Hackathon\Views\Shared\" />
+    <Folder Include="Views\Ут\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

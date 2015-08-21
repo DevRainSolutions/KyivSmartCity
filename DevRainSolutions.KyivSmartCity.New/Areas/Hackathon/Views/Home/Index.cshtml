@@ -1,0 +1,417 @@
+﻿@model IEnumerable<DevRainSolutions.KyivSmartCity.New.Models.Group>
+@{
+    ViewBag.Title = "Хакатон \"Київ Smart City\"";
+    ViewBag.IsMain = true;
+    var counter = 1;
+}
+
+
+<div style="margin-bottom: 40px">
+
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v2.4&appId=242663235886929";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <div class="fb-like" data-href="https://www.facebook.com/smartcitykyiv"
+         data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+</div>
+
+
+<h3>Де і коли?</h3>
+
+<p>5-6 вересня 2015 р., FreeGen SPACE, Київ, вулиця Басейна, 12</p>
+
+
+<h3 class="margin">Інформація для партнерів</h3>
+<p>
+    Презентацію для партнерів можна завантажити за <a target="_blank"
+                                                      href="https://www.dropbox.com/s/e302mn00bftmovy/Hackaton%20Kyiv%20Smart%20City.pdf?dl=0">цим посиланням</a>.
+</p>
+
+<p>
+    Запитання, партнерські пропозиції прохання відправляти на адресу
+    alex.krakovetskiy@gmail.com.
+</p>
+
+<h3 class="margin">Інформація для ЗМІ</h3>
+<p>
+    Представники ЗМІ матимуть можливість поспілкуватись з організаторами та учасниками протягом
+    всього хакатону. Проте для вашої зручності ми проведемо окрему прес-конференцію безпосередньо
+    перед презентаціями проектів.
+
+    Прохання представникам ЗМІ зареєструватись за <a href="http://goo.gl/forms/VDSmG6TJw8">цим посиланням</a>.
+</p>
+
+<p>
+    В прес-конференції будуть приймати участь:
+</p>
+
+<ol>
+    <li>Назаров Юрій, радник київського міського голови. Співкоординатор Kyiv Smart City.</li>
+    <li>
+        Мойсеєнко Антон, Co-founder GiveMeALift. Співкоординатор Kyiv Smart City.
+    </li>
+    <li>
+        Краковецький Олександр, CEO DevRain Solutions, керівник групи по роботі з ІТ спільнотою в рамках робочої группи "Київ Smart City", Microsoft Most Valuable Professional, Microsoft Regional Director, PhD.
+    </li>
+</ol>
+
+<h3 class="margin">Програма хакатону</h3>
+<p class="promo">Програма хакатону в процесі наповнення/узгодження і може бути змінена.</p>
+<table class="table">
+    <tr>
+        <th>Час</th>
+        <th>Опис</th>
+        <th>Дата</th>
+    </tr>
+    <tr>
+        <td>11:00-12:00</td>
+        <td>Реєстрація учасників, вітальна кава.</td>
+        <td>5 вересня, субота</td>
+    </tr>
+    <tr>
+        <td>12:00-12:30</td>
+        <td>Вітальне слово від організаторів та партнерів. </td>
+        <td>5 вересня, субота</td>
+    <tr>
+        <td>12:30-13:00</td>
+        <td>Інструктаж для команд, початок роботи.</td>
+        <td>5 вересня, субота</td>
+    </tr>
+    <tr>
+        <td>14:00-18:00</td>
+        <td>Менторські сесії (для бажаючих).</td>
+        <td>5 вересня, субота</td>
+    </tr>
+
+    <tr>
+        <td>14:00</td>
+        <td>Закінчення роботи над проектами, підготовка команд до презентацій.</td>
+        <td>6 вересня, неділя</td>
+    </tr>
+    <tr>
+        <td>14:00-15:00</td>
+        <td>Прес-конференція для ЗМІ.</td>
+        <td>6 вересня, неділя</td>
+    </tr>
+    <tr>
+        <td>15:00-17:00</td>
+        <td>Презентації команд, визначення переможців.</td>
+        <td>6 вересня, неділя</td>
+    </tr>
+    <tr>
+        <td>17:00-17:05</td>
+        <td>Підбиття підсумків хакатону.</td>
+        <td>6 вересня, неділя</td>
+    </tr>
+</table>
+
+
+
+<h3 class="margin">Критерії оцінювання проектів</h3>
+
+<p>
+    Мета хакатону - за відведений час (24-72 годин) розробити готовий продукт або прототип.
+    Хакатони на соціальну та міську тематику мають певні особливості - за цей час дуже важко
+    створити щось конкретне та корисне. Тому в нашому випадку дуже важливим є загальна проробленість
+    проблеми або рішення.</p>
+<p> Ви хочете створити мобільний застосунок, але немає даних чи АПІ? В такому разі почніть з АПІ.
+    Наявність публічного АПІ в <i>довгостроковій</i> перспективі набагато важливіше за наявність клієнту для
+    однієї/двох мобільних платформ. Подумайте, хто і яким чином буде забезпечувати цілісність, актуальність
+    та оновлювальність даних. Запропонуйте модель інтеграції з існуючими сервісами міста та список
+    організацій, міністерств чи відділів, хто міг би або мав би наповнювати цю базу даних. Переконайтесь, щоб
+    у разі втрати інтересу до вашого проекту в майбутньому цей проект міг би розвиватись без вас -
+    відкрийте програмний код, напишіть документацію по його використанню, запропонуйте волонтерам приєднатись до
+    вашого проекту.
+</p>
+
+
+<table class="table">
+    <tr>
+        <th>#</th>
+        <th style="width: 250px">Назва</th>
+        <th>Опис</th>
+        <th>Бали</th>
+    </tr>
+    <tr>
+        <td>
+            @(counter++).
+        </td>
+        <td>
+            Актуальність проекту з точки зору громадян міста
+        </td>
+        <td>
+            Проект учасників повинен вирішувати певну проблему міста, повинен бути актуальним
+            та мати практичне або стратегічне значення для міста.
+        </td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>
+            @(counter++).
+        </td>
+        <td>
+            Викоритання сервісів, АПІ міста та відкритих даних
+        </td>
+        <td>
+            Пріоритет буде надаватись проектам, які зможуть запропонувати приктичне використання сервісів
+            міста та відкритих даних. Якщо тих чи інших даних немає у наявності чи вони не доступні,
+            проте проект буде вартий уваги, нашою задачею буде знайти можливість забезпечити
+            учасників необхідними даними під час хакатону або після його завершення.
+        </td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>
+            @(counter++).
+        </td>
+        <td>
+            Системність підходу щодо вирішення проблеми
+        </td>
+        <td>
+            Ми розуміємо, що розробити повноцінний сервіс чи мобільний застосунок за 24 години важко,
+            а при відсутності и часковій доступності тих чи інших даних зробити це буде ще важко.
+            Тому ми будемо оцінювати не скільки завершеність проекту, скільки системний підхід щодо
+            вирішення задачі - розуміння проблематики, наявність опрацьованих матеріалів, наявність даних,
+            аналіз аналогів інших міст і загальне бачення розвитку проекту.
+        </td>
+        <td>30</td>
+    </tr>
+    <tr>
+        <td>
+            @(counter++).
+        </td>
+        <td>
+            Робота з менторами
+        </td>
+        <td>
+            На хакатоні будуть присутні ментори та експерти в різних питаннях - як технічних, як і не технічних.
+            Тісне спілкування з менторами та експертами значно підвищує шанс, що ваш проект буде дійсно
+            збалансований з точку зору всіх учасників процесу і ви не витратите час на речі, які не є актуальними
+            або мають вже робочі аналоги.
+        </td>
+        <td>10</td>
+    </tr>
+</table>
+
+
+
+@{ counter = 1;}
+<h3 class="margin">Ментори та експерти</h3>
+<table class="table mentors">
+    <tr>
+        <th>#</th>
+        <th>&nbsp;</th>
+        <th style="width: 250px">Ім'я</th>
+        <th>Опис</th>
+        <th>Контакти</th>
+    </tr>
+    <tr>
+        <td>
+            @(counter++).
+        </td>
+        <td>
+            <img src="http://s9.postimg.org/9ksns63f3/Nazarov.jpg" />
+        </td>
+        <td>
+            Назаров Юрій
+        </td>
+        <td>
+            Радник київського міського голови. Співкоординатор Kyiv Smart City.
+        </td>
+        <td>
+            <a href="https://www.facebook.com/yuriy.nazarov.3">fb.com/yuriy.nazarov.3</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @(counter++).
+        </td>
+        <td>
+            <img src="https://habrastorage.org/files/23e/5db/8c0/23e5db8c0cad4d04bf7e95a16af0a988.jpg" />
+        </td>
+        <td>
+            Резник Денис
+        </td>
+        <td>
+            Director R&D у TFG, спеціаліст по базам даних, Microsoft Most Valuable Professional.
+        </td>
+        <td>
+            <a href="https://www.facebook.com/denis.reznik.5">fb.com/denis.reznik.5</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @(counter++).
+        </td>
+        <td>
+            <img src="http://habrastorage.org/files/e3d/a9e/34a/e3da9e34a4514086b9ff20e07f59bc7c.jpg" />
+        </td>
+        <td>
+            Галушко Михайло
+        </td>
+        <td>
+            CTO/Co-Founder <a href="http://devrain.com">DevRain Solutions</a>, спеціаліст по розробці програмного забезпечення, Microsoft Most Valuable Professional.
+        </td>
+        <td>
+            <a href="https://www.facebook.com/denis.reznik.5">fb.com/denis.reznik.5</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @(counter++).
+        </td>
+        <td>
+            <img src="https://habrastorage.org/files/bf2/03a/3c5/bf203a3c57f94d3c8f48babc8b6208ec.png" />
+        </td>
+        <td>
+            Єфремов Олександр
+        </td>
+        <td>
+            CTO в KitSoft, розробник порталів 1551 і КМДА.
+        </td>
+        <td>
+            <a href="https://www.facebook.com/profile.php?id=100003085578775">fb.com/profile.php?id=100003085578775</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @(counter++).
+        </td>
+        <td>
+            <img src="http://habrastorage.org/files/c1c/f09/866/c1cf0986677c4209b4c7c76b69930d9a.jpg" />
+        </td>
+        <td>
+            Бойко Антон
+        </td>
+        <td>
+            Експерт по платформі Microsoft Azure і хмарним технологіям, Microsoft Most Valuable Professional.
+        </td>
+        <td>
+            <a href="https://www.facebook.com/boyko.ant">fb.com/boyko.ant</a>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>
+            @(counter++).
+        </td>
+        <td>
+            <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/p/4/000/148/0da/1869d13.jpg" />
+        </td>
+        <td>
+            Мойсеєнко Антон
+        </td>
+        <td>
+            Co-founder GiveMeALift. Співкоординатор Kyiv Smart City.
+        </td>
+        <td>
+            <a href="https://www.facebook.com/a.moyseyenko">fb.com/a.moyseyenko</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @(counter++).
+        </td>
+        <td>
+            <img src="https://habrastorage.org/files/f42/06a/015/f4206a01517d43e08157ec7924087060.jpg" />
+        </td>
+        <td>
+            Солнцев Олексій
+        </td>
+        <td>
+            Senior Delivery Manager у EPAM Systems Ukraine, експерт по розробці програмного забезпечення та методогіям управління проектами.
+        </td>
+        <td>
+            <a href="https://www.facebook.com/aleksey.solntsev">fb.com/aleksey.solntsev</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @(counter++).
+        </td>
+        <td>
+            <img src="http://hsto.org/files/f3b/95d/b80/f3b95db8024c463eaa099c5e3e2abba2.jpg" />
+        </td>
+        <td>
+            Краковецький Олександр
+        </td>
+        <td>
+            CEO <a href="http://devrain.com">DevRain Solutions</a>, керівник групи по роботі з
+            ІТ спільнотою в рамках робочої группи "Київ Smart City", Microsoft Most Valuable Professional, Microsoft Regional Director, PhD.
+
+        </td>
+        <td>alex.krakovetskiy@gmail.com, <a href="https://www.facebook.com/alex.krakovetskiy">fb.com/alex.krakovetskiy</a>, <a href="https://twitter.com/msugvnua">@@msugvnua</a></td>
+    </tr>
+</table>
+
+
+@{ counter = 1;}
+<h3 class="margin">Призи та заохочення</h3>
+<table class="table">
+    <tr>
+        <th>#</th>
+        <th>Опис</th>
+        <th>Компанія</th>
+        <th>Кількість</th>
+    </tr>
+    <tr>
+        <td>
+            @(counter++).
+        </td>
+        <td>
+            Інформація про кращі проекти буде розміщена на офіційному порталі КМДА.
+            Проектам буде надана допомога зі сторони офіційних структур для завершення проекту,
+            інтеграції з іншими установами та допомога в плані отримання доступу до необхідних даних/сервісів.
+            Кращі проекти будуть мати можливість презентувати
+            свої проекти перед інвесторами.
+        </td>
+        <td>КМДА</td>
+        <td>3-5</td>
+    </tr>
+        <tr>
+            <td>
+                @(counter++).
+            </td>
+            <td>
+                Фінансова та менторська допомога для кращого проекту за версією ЛУН.ua. 
+            </td>
+            <td>ЛУН.ua</td>
+            <td>0-1</td>
+        </tr>
+    @*
+        <tr>
+            <td>
+                @(counter++).
+            </td>
+            <td>
+                Участь в програмі для стартапів <a href="http://startupfocus.saphana.com/">SAP Startup Focus</a>.
+            </td>
+            <td>SAP</td>
+            <td>1</td>
+        </tr>*@
+</table>
+
+
+<h3 class="margin">Партнери</h3>
+<p>Велика подяка нашим партнерам на спонсорам!</p>
+<p>
+    <a href="http://www.kmcp.kiev.ua/" target="_blank" title="Київський молодіжний центр праці">
+        <img src="/Images/kmcp.png"/>
+    </a>
+    <a href="http://devrain.com" target="_blank" title="DevRain Solutions">
+        <img src="http://devrain.com/Images/logo.png"/>
+    </a>
+    <a href="http://www.lun.ua/" target="_blank" title="Ищете недвижимость в Киеве? Интересуют новостройки в Киеве? Аренда квартир, комнат, офисов, продажа квартир - ЛУН.ua">
+        <img src="/Images/lun.png" />
+    </a>
+</p>

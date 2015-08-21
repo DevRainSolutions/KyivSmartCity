@@ -73,3 +73,20 @@ textarea {
       background: url(/Images/bg.png) top right no-repeat;
   }
  
+
+  .promo {
+         margin-top: 10px;
+    background-color: #faf8ea;
+    border-radius: 6px;
+    border: 1px solid #f2eee0;
+    padding: 8px 20px;
+  }
+
+  .margin {
+      margin-top: 40px;
+  }
+
+  .mentors td img {
+      max-width: 75px;
+      border-radius: 50%;
+  }
