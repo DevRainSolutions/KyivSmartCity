@@ -227,11 +227,16 @@
     <Compile Include="Areas\Admin\Models\NewsItemRepository.cs" />
     <Compile Include="Areas\Admin\Models\TeamMemberRepository.cs" />
     <Compile Include="Areas\Admin\Models\VolunteerRepository.cs" />
+    <Compile Include="Areas\En\Controllers\GroupsController.cs" />
+    <Compile Include="Areas\En\Controllers\HomeController.cs" />
+    <Compile Include="Areas\En\Controllers\TeamController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\En\EnAreaRegistration.cs" />
     <Compile Include="Areas\Hackathon\Controllers\HomeController.cs" />
     <Compile Include="Areas\Hackathon\HachathonAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\EnController.cs" />
     <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -245,6 +250,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\EnDataSource.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ReCaptchaClass.cs" />
@@ -255,6 +261,12 @@
   <ItemGroup>
     <Content Include="App_Data\Cities.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\En\Views\Groups\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Areas\En\Views\Shared\_Layout.cshtml">
+      <SubType>Code</SubType>
     </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -325,6 +337,11 @@
     <Content Include="Areas\Hackathon\Views\web.config" />
     <Content Include="Areas\Hackathon\Views\Home\Index.cshtml" />
     <Content Include="Areas\Hackathon\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\En\Views\web.config" />
+    <Content Include="Areas\En\Views\Home\Index.cshtml" />
+    <Content Include="Areas\En\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\En\Views\Groups\Details.cshtml" />
+    <Content Include="Areas\En\Views\Home\Hackathon.cshtml" />
     <None Include="Properties\PublishProfiles\kyivsmartcity-dev.pubxml" />
     <None Include="Properties\PublishProfiles\kyivsmartcity.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -406,7 +423,6 @@
     <Content Include="Views\UserMailer\Welcome.cshtml" />
     <Content Include="Views\Home\Forum2015.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
-    <Content Include="Views\En\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NotFoundMvc\NotFoundMvc.csproj">
@@ -435,9 +451,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\En\Models\" />
     <Folder Include="Areas\Hackathon\Models\" />
     <Folder Include="Areas\Hackathon\Views\Shared\" />
-    <Folder Include="Views\Ут\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

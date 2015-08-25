@@ -51,25 +51,17 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/hackathon">Хакатон</a></li>
-                    <li>@Html.ActionLink("Команда", "Index", "Team")</li>
-                    <li>@Html.ActionLink("Групи", "Index", "Groups")</li>
-                    <li>@Html.ActionLink("Новини", "Index", "News")</li>
-                    <li>@Html.ActionLink("Долучитись до проекту", "Join", "Home")</li>
-                    <li>@Html.ActionLink("Forum 2015", "Forum2015", "Home")</li>
-
+                    @*<li>@Html.ActionLink("Team", "Index", "Team")</li>*@
+                    <li>@Html.ActionLink("Groups", "Index", "Groups", null, new {area="En"})</li>
+                    <li>@Html.ActionLink("Hackathon", "Hackathon", "Home", null, new { area = "En" })</li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">English <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Українська <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="@Url.Action("Index", "Home", new {area = ""})">Українська</a></li>
-                            <li><a href="@Url.Action("Index", "Home", new {area = "En"})">English</a></li>
+                            <li><a href="@Url.Action("Index", "Home", new{area=""})">Українська</a></li>
+                            <li><a href="@Url.Action("Index", "Home", new{area="En"})">English</a></li>
                         </ul>
                     </li>
-
-                    @*
-    <li>@Html.ActionLink("English version", "Index", "En")</li>*@
-                </ul>@*
-                    @Html.Partial("_LoginPartial")*@
+               </ul>
             </div>
         </div>
 
@@ -82,13 +74,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
-                        <h1 style="color: white">Хакатон "Kyiv Smart City"</h1>
+                        <h1 style="color: white">Kyiv Smart City Hackathon</h1>
                         <p class="lead">
-                            Мета – зібрати під одним дахом талановитих людей, яким не байдуже майбутнє Києва. Хакатон присвячений розробці сервісів та мобільних застосунків на базі відкритих даних та API міста, що зможуть покращити життя киян та сприятимуть розвитку Києва як «розумного міста».
-                        </p>
+                            The goal – to gather under the same roof the talented people, concerned about the future of Kyiv city. The mission of the Hackathon Project is development of the services and mobile applications on the basis of the open data and API of the city with purpose to improve the life of Kyiviens and to promote the development of Kyiv as “smart city”. </p>
                         <p>
-                            <a href="http://goo.gl/forms/MjQSGcTHiX" target="_blank" rel="nofollow" class="btn btn-danger btn-lg">Зареєструватись</a>
-                            <a href="http://appclub.im/events/details/11049" style="font-size: 70%; color: lightgrey">Деталі</a>
+                            <a href="http://goo.gl/forms/MjQSGcTHiX" target="_blank" rel="nofollow" class="btn btn-danger btn-lg">Register</a>
+                            <a href="@Url.Action("Hackathon", "Home", new{area="En"})" style="font-size: 70%; color: lightgrey">Learn more</a>
                         </p>
                     </div>
                 </div>
