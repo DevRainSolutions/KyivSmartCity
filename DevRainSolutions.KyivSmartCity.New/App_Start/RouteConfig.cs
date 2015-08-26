@@ -16,12 +16,12 @@ namespace DevRainSolutions.KyivSmartCity.New
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRouteLowercase("Root", "{action}",
-                new { controller = "Home", action = "Index" },
+                new { controller = "Home", action = "Index", area="" },
                 new { isMethodInHomeController = new RootRouteConstraint<HomeController>() },
                 new[] { "DevRainSolutions.KyivSmartCity.New.Controllers" });
 
             routes.MapRouteLowercase("Details", "{controller}/{id}",
-                new { action = "Details" },
+                new { action = "Details", area = "" },
                 new { id = @"\d+" },
                 new[] { "DevRainSolutions.KyivSmartCity.New.Controllers" });
 

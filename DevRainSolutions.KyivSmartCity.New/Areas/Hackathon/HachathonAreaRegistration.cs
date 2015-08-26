@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using LowercaseRoutesMVC;
 
 namespace DevRainSolutions.KyivSmartCity.New.Areas.Hackathon
 {
@@ -14,7 +15,7 @@ namespace DevRainSolutions.KyivSmartCity.New.Areas.Hackathon
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
-            context.MapRoute(
+            context.MapRouteLowercase(
                 "Hackathon_default",
                 "Hackathon/{controller}/{action}/{id}",
                 new { action = "Index", controller="Home", id = UrlParameter.Optional },

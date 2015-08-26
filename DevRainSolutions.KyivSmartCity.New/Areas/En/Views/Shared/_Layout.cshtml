@@ -51,9 +51,16 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    @*<li>@Html.ActionLink("Team", "Index", "Team")</li>*@
-                    <li>@Html.ActionLink("Groups", "Index", "Groups", null, new {area="En"})</li>
-                    <li>@Html.ActionLink("Hackathon", "Hackathon", "Home", null, new { area = "En" })</li>
+                    <li>
+                        <a href="@Url.Action("Index", "Groups", new { area = "En" })">
+                            Groups
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Hackathon", "Home", new { area = "En" })">
+                            Hackathon
+                        </a>
+                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Українська <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -61,7 +68,7 @@
                             <li><a href="@Url.Action("Index", "Home", new{area="En"})">English</a></li>
                         </ul>
                     </li>
-               </ul>
+                </ul>
             </div>
         </div>
 
@@ -76,7 +83,8 @@
                     <div class="col-md-8">
                         <h1 style="color: white">Kyiv Smart City Hackathon</h1>
                         <p class="lead">
-                            The goal – to gather under the same roof the talented people, concerned about the future of Kyiv city. The mission of the Hackathon Project is development of the services and mobile applications on the basis of the open data and API of the city with purpose to improve the life of Kyiviens and to promote the development of Kyiv as “smart city”. </p>
+                            The goal – to gather under the same roof the talented people, concerned about the future of Kyiv city. The mission of the Hackathon Project is development of the services and mobile applications on the basis of the open data and API of the city with purpose to improve the life of Kyiviens and to promote the development of Kyiv as “smart city”.
+                        </p>
                         <p>
                             <a href="http://goo.gl/forms/MjQSGcTHiX" target="_blank" rel="nofollow" class="btn btn-danger btn-lg">Register</a>
                             <a href="@Url.Action("Hackathon", "Home", new{area="En"})" style="font-size: 70%; color: lightgrey">Learn more</a>
@@ -84,14 +92,14 @@
                     </div>
                 </div>
 
-               
+
 
                 @*
-    <h1 style="color: white">Kyiv Smart City</h1>
-    <p class="lead">Що об’єднує такі міста як Відень, Торонто, Париж, Нью-Йорк, Лондон, Токіо, Берлін, Копенгаген, Гонконг та Барселона? Усі – належать до ТОП-10 «розумних» міст планети. Вони активно застосовують інформаційно-комунікаційні технології аби більш ефективно використовувати ресурси, зберігати енергію, підвищувати якість життя мешканців, зменшувати негативний вплив на навколишнє середовище та підтримувати інновації. Чи потрапить до переліку Smart cities Київ? Все залежить від тебе!</p>
-    <p>
-        <a href="@Url.Action("Join", "Home")" class="btn btn-primary btn-lg">Долучитись до проекту &raquo;</a>
-    </p>*@
+                    <h1 style="color: white">Kyiv Smart City</h1>
+                    <p class="lead">Що об’єднує такі міста як Відень, Торонто, Париж, Нью-Йорк, Лондон, Токіо, Берлін, Копенгаген, Гонконг та Барселона? Усі – належать до ТОП-10 «розумних» міст планети. Вони активно застосовують інформаційно-комунікаційні технології аби більш ефективно використовувати ресурси, зберігати енергію, підвищувати якість життя мешканців, зменшувати негативний вплив на навколишнє середовище та підтримувати інновації. Чи потрапить до переліку Smart cities Київ? Все залежить від тебе!</p>
+                    <p>
+                        <a href="@Url.Action("Join", "Home")" class="btn btn-primary btn-lg">Долучитись до проекту &raquo;</a>
+                    </p>*@
             </div>
         </div>
 
