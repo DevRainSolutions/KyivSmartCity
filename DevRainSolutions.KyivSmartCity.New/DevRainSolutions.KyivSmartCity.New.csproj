@@ -285,7 +285,9 @@
     <Content Include="Images\kmcp.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\lun.png" />
+    <Content Include="Images\LXFT_4_NB_New.png" />
     <Content Include="Images\main-top-bg.jpg" />
+    <Content Include="Images\SAP_grad_R_pref.jpg" />
     <Content Include="Images\Team\alex.png" />
     <Content Include="Images\Team\andriy.jpg" />
     <Content Include="Images\Team\anton.jpg" />
