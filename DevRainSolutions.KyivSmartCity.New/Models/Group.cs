@@ -10,61 +10,16 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
-using DataAnnotationsExtensions;
-using DevRainSolutions.KyivSmartCity.New.App_GlobalResources;
 using WebGrease.Css.Extensions;
 
 namespace DevRainSolutions.KyivSmartCity.New.Models
 {
-    public class Recaptcha
+    public static class Recaptcha
     {
         public const string SiteKey = "6LfVeQkTAAAAAGOokhrTa3BXmlg957l-vq1Ssnvc";
         public const string SecretKey = "6LfVeQkTAAAAAO1T0RDmBQLmNSxmL7G2UJ5qPreD";
     }
 
-
-    /// <summary>
-    /// http://mvcdiary.com/2012/09/28/create-a-custom-htmlhelper-textboxfor-to-display-label-text-as-placeholder-integrated-with-twitter-bootstrap/
-    /// </summary>
-    public static class TextBoxForExtensions
-    {
-        public static MvcHtmlString TextBoxPlaceHolderFor<TModel, TValue>(this HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression, object htmlAttributes)
-        {
-            var dict = new RouteValueDictionary(htmlAttributes);
-            return html.TextBoxPlaceHolderFor(expression, dict);
-        }
-        public static MvcHtmlString TextBoxPlaceHolderFor<TModel, TValue>(this HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression)
-        {
-            var htmlAttributes = new Dictionary<string, object>();
-            return html.TextBoxPlaceHolderFor(expression, htmlAttributes);
-        }
-
-        public static MvcHtmlString TextBoxPlaceHolderFor<TModel, TValue>(this HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression, IDictionary<string, object> htmlAttributes)
-        {
-            ModelMetadata metadata = ModelMetadata.FromLambdaExpression(expression, html.ViewData);
-
-            string htmlFieldName = ExpressionHelper.GetExpressionText(expression);
-            string labelText = metadata.DisplayName ?? metadata.PropertyName ?? htmlFieldName.Split('.').Last();
-
-            if (!String.IsNullOrEmpty(labelText))
-            {
-                if (htmlAttributes == null)
-                {
-                    htmlAttributes = new Dictionary<string, object>();
-                }
-
-                if (metadata.IsRequired)
-                {
-                    labelText += " *";
-                }
-
-                htmlAttributes.Add("placeholder", labelText);
-            }
-
-            return html.TextBoxFor(expression, htmlAttributes);
-        }
-
-    }
 
     public static class PasswordForExtensions
     {
@@ -306,76 +261,6 @@ namespace DevRainSolutions.KyivSmartCity.New.Models
 
     }
 
-    public class BaseItem
-    {
-        [Key]
-        public int Id { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        [Display(Name = "Назва")]
-        public string Name { get; set; }
-
-        [UIHint("HtmlEditor"), AllowHtml]
-        [Display(Name = "Опис / контент")]
-        public string Description { get; set; }
-    }
-
-    public class TeamMember
-    {
-        [Key]
-        public int Id { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        public string Name { get; set; }
-
-        [Required]
-        [StringLength(300)]
-        public string ImageUrl { get; set; }
-
-        [Required]
-        [StringLength(1000)]
-        public string Description { get; set; }
-
-        [StringLength(100)]
-        public string Email { get; set; }
-
-        [StringLength(200)]
-        public string Twitter { get; set; }
-
-        [StringLength(200)]
-        public string Facebook { get; set; }
-
-        [StringLength(200)]
-        public string LinkedIn { get; set; }
-
-        public int Index { get; set; }
-    }
-
-    public class NewsItem
-    {
-        [Key]
-        public int Id { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        public string Name { get; set; }
-
-        public string Description { get; set; }
-
-        public DateTime DatePublished { get; set; }
-
-        public bool IsPublished { get; set; }
-
-        [Required]
-        [StringLength(300)]
-        public string Image { get; set; }
-
-        [UIHint("HtmlEditor"), AllowHtml]
-        public string Body { get; set; }
-    }
-
     public class Group
     {
         [Key]
@@ -400,112 +285,5 @@ namespace DevRainSolutions.KyivSmartCity.New.Models
         public int TeamMemberId { get; set; }
 
         public virtual TeamMember TeamMember { get; set; }
-    }
-
-    public class Document
-    {
-        [Key]
-        public int Id { get; set; }
-
-        [Required]
-        public int GroupId { get; set; }
-
-        public virtual Group Group { get; set; }
-
-        [Required]
-        [StringLength(300)]
-        public string Title { get; set; }
-
-        [Required]
-        [StringLength(600)]
-        public string Description { get; set; }
-    }
-
-    public class Expert
-    {
-
-        [Key]
-        public int Id { get; set; }
-
-        [Required]
-        public int GroupId { get; set; }
-
-        public virtual Group Group { get; set; }
-
-        [Required]
-        [StringLength(300)]
-        public string Title { get; set; }
-
-        [Required]
-        [StringLength(600)]
-        public string Description { get; set; }
-
-    }
-
-    public class Volunteer
-    {
-        [Key]
-        public int Id { get; set; }
-
-        [StringLength(255)]
-        [Display(Name = "Електронна адреса")]
-        [Required(ErrorMessageResourceName = "PropertyValueRequired", ErrorMessageResourceType = typeof(ValidationResources))]
-        [EmailAddress(ErrorMessage = "Введіть коректну електронну адресу.")]
-        [Email(ErrorMessage = "Введіть коректну електронну адресу.")]
-        //[Remote("IsVolunteerEmailAllowed", "Home", ErrorMessage = "Волонтер з такою адресою вже існує")]
-        public string Email { get; set; }
-
-        [Required(ErrorMessageResourceName = "PropertyValueRequired", ErrorMessageResourceType = typeof(ValidationResources))]
-        [StringLength(100, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(ValidationResources))]
-        [Display(Name = "Ім'я")]
-        public string FirstName { get; set; }
-
-        [Display(Name = "Прізвище")]
-        [Required(ErrorMessageResourceName = "PropertyValueRequired", ErrorMessageResourceType = typeof(ValidationResources))]
-        [StringLength(100, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(ValidationResources))]
-        public string LastName { get; set; }
-
-        [Display(Name = "По батькові")]
-        [StringLength(100, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(ValidationResources))]
-        public string MiddleName { get; set; }
-
-        //public DateTime DateOfBirth { get; set; }
-
-        public DateTime RegistrationDate { get; set; }
-
-        [Display(Name = "Місто")]
-        [Required(ErrorMessageResourceName = "PropertyValueRequired", ErrorMessageResourceType = typeof(ValidationResources))]
-        public string City { get; set; }
-
-
-        [Display(Name = "Телефон")]
-        [StringLength(20, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(ValidationResources))]
-        [Required(ErrorMessageResourceName = "PropertyValueRequired", ErrorMessageResourceType = typeof(ValidationResources))]
-        public string Phone { get; set; }
-
-
-        [StringLength(4000, ErrorMessageResourceName = "MaxLength", ErrorMessageResourceType = typeof(ValidationResources))]
-        [Display(Name = "Коментарі")]
-        public string Notes { get; set; }
-
-        [Display(Name = "Робоча група")]
-        [Required(ErrorMessageResourceName = "PropertyValueRequired", ErrorMessageResourceType = typeof(ValidationResources))]
-        public int GroupId { get; set; }
-
-        public virtual Group Group { get; set; }
-
-    }
-
-    public static class UrlHelperExtensions
-    {
-        public static string ContentAbsUrl(this UrlHelper url, string relativeContentPath)
-        {
-            Uri contextUri = HttpContext.Current.Request.Url;
-
-            var baseUri = string.Format("{0}://{1}{2}", contextUri.Scheme,
-               contextUri.Host, contextUri.Port == 80 ? string.Empty : ":" + contextUri.Port);
-
-            return string.Format("{0}{1}", baseUri, VirtualPathUtility.ToAbsolute(relativeContentPath));
-        }
     }
 }

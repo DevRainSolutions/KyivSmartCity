@@ -34,5 +34,7 @@ namespace DevRainSolutions.KyivSmartCity.New.Areas.Admin.Models
         public DbSet<DevRainSolutions.KyivSmartCity.New.Models.Document> Documents { get; set; }
 
         public DbSet<DevRainSolutions.KyivSmartCity.New.Models.Volunteer> Volunteers { get; set; }
+
+        public DbSet<DevRainSolutions.KyivSmartCity.New.Models.Project> Projects { get; set; }
     }
 }

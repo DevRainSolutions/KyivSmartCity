@@ -1,0 +1,33 @@
+﻿@using System.Collections
+@using System.Globalization
+@using MarkdownDeep
+@model DevRainSolutions.KyivSmartCity.New.Models.Project
+@{
+    ViewBag.Title = Model.Title;
+    ViewBag.OgImage = Model.ImageUrl;
+    var md = new Markdown { SafeMode = false, ExtraMode = true };
+}
+<div class="row">
+    <div class="col-md-8">
+
+        <h2>@Model.Title</h2>
+        <p>@Html.Partial("_Social")</p>
+        <p>
+            <div class="meta">Стан впровадження проекту:</div>
+            @Model.CurrentState
+        </p>
+        <p>
+            <div class="meta">Сфера проекту:</div>
+            @Model.Topic
+        </p>
+
+        <div class="text-block fs16">
+            @Html.Raw(md.Transform(Model.Description))
+        </div>
+
+        @Html.Partial("_Disqus")
+    </div>
+    <div class="col-md-4 margin">
+        <img src="@Model.ImageUrl" />
+    </div>
+</div>

@@ -1,0 +1,61 @@
+@model DevRainSolutions.KyivSmartCity.New.Models.Project
+
+
+<div>
+    @Html.LabelFor(model => model.Title)
+</div>
+<div>
+    @Html.EditorFor(model => model.Title)
+    @Html.ValidationMessageFor(model => model.Title)
+</div>
+
+<div>
+    @Html.LabelFor(model => model.CurrentState)
+</div>
+<div>
+    @Html.EditorFor(model => model.CurrentState)
+    @Html.ValidationMessageFor(model => model.CurrentState)
+</div>
+
+<div>
+    @Html.LabelFor(model => model.Topic)
+</div>
+<div>
+    @Html.EditorFor(model => model.Topic)
+    @Html.ValidationMessageFor(model => model.Topic)
+</div>
+
+<div>
+    @Html.LabelFor(model => model.Description)
+</div>
+<div>
+    @Html.EditorFor(model => model.Description)
+    @Html.ValidationMessageFor(model => model.Description)
+</div>
+
+
+<div>
+    @Html.LabelFor(model => model.Head)
+</div>
+<div>
+    @Html.EditorFor(model => model.Head)
+    @Html.ValidationMessageFor(model => model.Head)
+</div>
+
+<div>
+    @Html.LabelFor(model => model.ImageUrl)
+</div>
+<div>
+    @Html.EditorFor(model => model.ImageUrl)
+    @Html.ValidationMessageFor(model => model.ImageUrl)
+</div>
+
+
+<div>
+    @Html.LabelFor(model => model.PresentationUrl)
+</div>
+<div>
+    @Html.EditorFor(model => model.PresentationUrl)
+    @Html.ValidationMessageFor(model => model.PresentationUrl)
+</div>
+

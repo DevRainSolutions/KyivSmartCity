@@ -1,0 +1,55 @@
+﻿@using System.Globalization
+@using DevRainSolutions.KyivSmartCity.New.Models
+@using PagedList
+@using PagedList.Mvc
+@model IEnumerable<DevRainSolutions.KyivSmartCity.New.Models.Project>
+@{
+    ViewBag.Title = "Проекти";
+
+}
+
+
+<div class="row">
+ @*   <div class="col-md-8">*@
+        <h2>@ViewBag.Title</h2>
+        <div class="row">
+            @foreach (var i in Model)
+            {
+                <div class="col-md-2">
+                    <p><a href="@Url.Action("Details", "Projects", new {id = i.Id})">
+    <img src="@i.ImageUrl" style="width: 100%" title="@i.Title"/>
+</a></p>
+</div>
+                @*
+                    <div class="col-md-8">
+                        <a href="@Url.Action("Details", "Projects", new{id=i.Id})">
+                            <h3 style="margin-top: 10px;">@i.Title</h3>
+                        </a>
+
+
+                        <p>
+                            <div class="meta">Стан впровадження проекту:</div>
+                            @i.CurrentState
+                        </p>
+                        <p>
+                            <div class="meta">Сфера проекту:</div>
+                            @i.Topic
+                        </p>
+                        <p>
+                            <a class="btn btn-default" href="@Url.Action("Details", "Projects", new{id=i.Id})">Читати повністю &raquo;</a>
+                        </p>
+                    </div>*@
+
+
+
+            }
+        </div>
+
+        <div>
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+        </div>
+    </div>
+    @*<div class="col-md-4">
+            @Html.Partial("_Aside")
+        </div>
+    </div>*@

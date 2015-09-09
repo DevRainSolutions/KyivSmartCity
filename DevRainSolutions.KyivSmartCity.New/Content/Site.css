@@ -90,3 +90,8 @@ textarea {
       max-width: 75px;
       border-radius: 50%;
   }
+
+  .meta {
+      font-size: 90%;
+      color: gray;
+  }

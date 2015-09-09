@@ -13,7 +13,8 @@ namespace DevRainSolutions.KyivSmartCity.New.Controllers
 
         public ActionResult Details(int id)
         {
-            return View(db.Groups.Find(id));
+            var group = db.Groups.Find(id);
+            return View(group);
         }
 
     
