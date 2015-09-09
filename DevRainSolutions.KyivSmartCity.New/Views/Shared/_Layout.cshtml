@@ -51,7 +51,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="@Url.Action("Index", "Home", new {area = "Hackathon"})">Хакатон</a></li>
+                    <li>
+                        <a href="@Url.Action("Session2020", "Home", new {area = ""})">Сесія</a>
+                    </li>
+                @*
+    <li><a href="@Url.Action("Index", "Home", new {area = "Hackathon"})">Хакатон</a></li>*@
                     <li>
                         <a href="@Url.Action("Index", "Team", new {area = ""})">Команда</a>
                     </li>
@@ -96,7 +100,7 @@
 
     @if (ViewBag.IsMain != null)
     {
-        <div class="jumbotron" style="background: url('/Images/hack-bg.jpg') 100%; background-size: cover">
+        <div class="jumbotron" style="background: url('/Images/bg-session.jpg') bottom right; background-size: cover">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
@@ -109,10 +113,25 @@
                             <a href="http://goo.gl/forms/MjQSGcTHiX" target="_blank" rel="nofollow" class="btn btn-danger btn-lg">Зареєструватись</a>
                             <a href="@Url.Action("Index", "Home", new {area = "Hackathon"})" style="font-size: 70%; color: lightgrey">Деталі</a>
                         </p>*@
-                        <h1 style="color: white">Kyiv Smart City</h1>
-                        <p class="lead">Що об’єднує такі міста як Відень, Торонто, Париж, Нью-Йорк, Лондон, Токіо, Берлін, Копенгаген, Гонконг та Барселона? Усі – належать до ТОП-10 «розумних» міст планети. Вони активно застосовують інформаційно-комунікаційні технології аби більш ефективно використовувати ресурси, зберігати енергію, підвищувати якість життя мешканців, зменшувати негативний вплив на навколишнє середовище та підтримувати інновації. Чи потрапить до переліку Smart cities Київ? Все залежить від тебе!</p>
+
+                        @*
+    <h1 style="color: white">Kyiv Smart City</h1>
+    <p class="lead">Що об’єднує такі міста як Відень, Торонто, Париж, Нью-Йорк, Лондон, Токіо, Берлін, Копенгаген, Гонконг та Барселона? Усі – належать до ТОП-10 «розумних» міст планети. Вони активно застосовують інформаційно-комунікаційні технології аби більш ефективно використовувати ресурси, зберігати енергію, підвищувати якість життя мешканців, зменшувати негативний вплив на навколишнє середовище та підтримувати інновації. Чи потрапить до переліку Smart cities Київ? Все залежить від тебе!</p>
+    <p>
+        <a href="@Url.Action("Join", "Home")" class="btn btn-primary btn-lg">Долучитись до проекту &raquo;</a>
+    </p>*@
+
+                        <h1>Сесія по визначенню <br/>візії Kyiv Smart City 2020</h1>
+                        <p class="lead" style="color: black">
+                            Громадська думка має величезне значення для нашого проекту. Запрошуємо всіх активних та небайдужих киян взяти участь у публічному обговоренні візії та концептуального бачення Києва як «розумного міста».</p>
                         <p>
-                            <a href="@Url.Action("Join", "Home")" class="btn btn-primary btn-lg">Долучитись до проекту &raquo;</a>
+                            <a href="https://docs.google.com/forms/d/1r2Q30snnuVvTF26bX0FcdqptvLx3WfdK_QStNbouqdE/viewform?c=0&w=1"
+                               target="_blank"
+                               class="btn btn-primary btn-lg">Зареєструватись &raquo;</a>
+
+                            <a href="@Url.Action("Session2020", "Home", new {area = ""})" 
+                               style="font-size: 70%; color: black">Деталі</a>
+
                         </p>
                     </div>
                 </div>

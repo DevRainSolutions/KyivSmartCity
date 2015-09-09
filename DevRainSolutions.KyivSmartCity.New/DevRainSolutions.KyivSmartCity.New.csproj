@@ -291,6 +291,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\bg-session.jpg" />
     <Content Include="Images\bg.png" />
     <Content Include="Images\hack-bg.jpg" />
     <Content Include="Images\kmcp.png" />
@@ -449,6 +450,7 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Projects\Details.cshtml" />
     <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Home\Session2020.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NotFoundMvc\NotFoundMvc.csproj">

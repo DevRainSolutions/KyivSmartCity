@@ -24,6 +24,11 @@ namespace DevRainSolutions.KyivSmartCity.New.Controllers
             return View();
         }
 
+        public ActionResult Session2020()
+        {
+            return View();
+        }
+
 
         public ActionResult Forum2015()
         {
