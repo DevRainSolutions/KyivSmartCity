@@ -291,6 +291,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\bg-openbudget.jpg" />
     <Content Include="Images\bg-session.jpg" />
     <Content Include="Images\bg.png" />
     <Content Include="Images\hack-bg.jpg" />
